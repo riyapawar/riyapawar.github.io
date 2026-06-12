@@ -27,7 +27,7 @@ export default function Experience() {
               <ul className="mt-2 space-y-1">
                 {item.bullets.map((b, j) => (
                   <li key={j} className="flex items-start gap-2 text-sm" style={{ color: "var(--text-2)" }}>
-                    <span className="mt-1 shrink-0" style={{ color: "var(--border)" }}>—</span>
+                    <span className="mt-1 shrink-0" style={{ color: "var(--text-4)" }}>·</span>
                     <span>{b}</span>
                   </li>
                 ))}
