@@ -4,7 +4,7 @@
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
 
-/* ── Light mode ──────────────────────────────── */
+/* ── Light (default) ─────────────────────────── */
 :root {
   color-scheme: light;
   --bg:          #ffffff;
@@ -21,9 +21,9 @@
   --accent-h:    #a34e00;
 }
 
-/* ── Dark mode ───────────────────────────────── */
+/* ── Dark via system preference ──────────────── */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     color-scheme: dark;
     --bg:          #0a0a0a;
     --bg-surface:  #141414;
@@ -38,6 +38,40 @@
     --accent:      #ff9040;
     --accent-h:    #e07830;
   }
+}
+
+/* ── Dark via manual toggle ──────────────────── */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg:          #0a0a0a;
+  --bg-surface:  #141414;
+  --bg-tag:      #1e1e1b;
+  --nav-bg:      rgb(10 10 10 / 0.94);
+  --text-1:      #f5f5f1;
+  --text-2:      #c8c8c0;
+  --text-3:      #808078;
+  --text-4:      #484844;
+  --border:      #242420;
+  --bg-hover:    #141412;
+  --accent:      #ff9040;
+  --accent-h:    #e07830;
+}
+
+/* ── Light via manual toggle (overrides system dark) */
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg:          #ffffff;
+  --bg-surface:  #f2f2ef;
+  --bg-tag:      #eaeae6;
+  --nav-bg:      rgb(255 255 255 / 0.94);
+  --text-1:      #0a0a0a;
+  --text-2:      #222222;
+  --text-3:      #555555;
+  --text-4:      #999999;
+  --border:      #e0e0da;
+  --bg-hover:    #f5f5f2;
+  --accent:      #c96000;
+  --accent-h:    #a34e00;
 }
 
 /* ── Base ────────────────────────────────────── */
