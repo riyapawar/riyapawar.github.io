@@ -16,10 +16,12 @@ export default function PortfolioClient() {
     <>
       <Nav activeTab={activeTab} setActiveTab={setActiveTab} />
       <main className="max-w-4xl mx-auto px-6">
-        {activeTab === "about" && <About />}
-        {activeTab === "experience" && <Experience />}
-        {activeTab === "projects" && <Projects />}
-        {activeTab === "news" && <News />}
+        <div key={activeTab} className="animate-in">
+          {activeTab === "about" && <About />}
+          {activeTab === "experience" && <Experience />}
+          {activeTab === "projects" && <Projects />}
+          {activeTab === "news" && <News />}
+        </div>
       </main>
       <footer
         className="max-w-4xl mx-auto px-6 py-8 mt-4 border-t"

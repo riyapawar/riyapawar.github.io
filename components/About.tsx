@@ -26,7 +26,7 @@ function LinkedInIcon() {
   );
 }
 
-function LinkRow({
+function LinkChip({
   href,
   icon,
   label,
@@ -42,10 +42,23 @@ function LinkRow({
       href={href}
       target={external ? "_blank" : undefined}
       rel={external ? "noopener noreferrer" : undefined}
-      className="flex items-center gap-1.5 text-sm transition-colors"
-      style={{ color: "var(--text-3)" }}
-      onMouseEnter={e => (e.currentTarget.style.color = "var(--accent)")}
-      onMouseLeave={e => (e.currentTarget.style.color = "var(--text-3)")}
+      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-sm font-medium"
+      style={{
+        color: "var(--text-2)",
+        borderColor: "var(--border)",
+        background: "var(--bg-surface)",
+        transition: "color 150ms, border-color 150ms, transform 150ms",
+      }}
+      onMouseEnter={e => {
+        e.currentTarget.style.color = "var(--accent)";
+        e.currentTarget.style.borderColor = "var(--accent)";
+        e.currentTarget.style.transform = "translateY(-1px)";
+      }}
+      onMouseLeave={e => {
+        e.currentTarget.style.color = "var(--text-2)";
+        e.currentTarget.style.borderColor = "var(--border)";
+        e.currentTarget.style.transform = "translateY(0)";
+      }}
     >
       {icon}
       <span>{label}</span>
@@ -61,29 +74,39 @@ export default function About() {
       {/* Hero */}
       <div className="flex flex-col sm:flex-row gap-8 items-start mb-10">
         <div className="shrink-0">
-          <div className="w-36 h-36 rounded-full overflow-hidden" style={{ background: "var(--bg-surface)" }}>
+          <div
+            className="w-40 h-40 rounded-2xl overflow-hidden"
+            style={{
+              background: "var(--bg-surface)",
+              boxShadow: "0 0 0 1px var(--border), var(--card-shadow)",
+            }}
+          >
             <Image
               src="/avatar.png"
               alt="Riya Pawar"
-              width={144}
-              height={144}
+              width={160}
+              height={160}
               className="w-full h-full object-cover object-top"
               priority
             />
           </div>
         </div>
 
-        <div className="flex-1 min-w-0">
-          <h1 className="text-2xl font-bold tracking-tight mb-0.5" style={{ color: "var(--text-1)" }}>
+        <div className="flex-1 min-w-0 pt-1">
+          <h1 className="text-3xl font-bold tracking-tight mb-1" style={{ color: "var(--text-1)" }}>
             {profile.name}
           </h1>
-          <p className="font-medium text-sm mb-3" style={{ color: "var(--accent)" }}>{profile.role}</p>
-          <p className="text-sm leading-6 mb-4" style={{ color: "var(--text-2)" }}>{profile.bio}</p>
+          <p className="font-medium text-sm mb-4" style={{ color: "var(--accent)" }}>
+            {profile.role}
+          </p>
+          <p className="text-sm leading-6 mb-5" style={{ color: "var(--text-2)", maxWidth: "54ch" }}>
+            {profile.bio}
+          </p>
 
-          <div className="flex flex-wrap gap-3">
-            <LinkRow href={`mailto:${profile.email}`} icon={<EmailIcon />} label="email" />
-            <LinkRow href={profile.github} icon={<GitHubIcon />} label="github" external />
-            <LinkRow href={profile.linkedin} icon={<LinkedInIcon />} label="linkedin" external />
+          <div className="flex flex-wrap gap-2">
+            <LinkChip href={`mailto:${profile.email}`} icon={<EmailIcon />} label="Email" />
+            <LinkChip href={profile.github} icon={<GitHubIcon />} label="GitHub" external />
+            <LinkChip href={profile.linkedin} icon={<LinkedInIcon />} label="LinkedIn" external />
           </div>
         </div>
       </div>
@@ -94,7 +117,25 @@ export default function About() {
           <h2 className="text-xs font-semibold uppercase tracking-widest mb-4" style={{ color: "var(--text-4)" }}>
             Education
           </h2>
-          <div>
+          <div
+            className="rounded-xl p-5 border"
+            style={{
+              borderColor: "var(--border)",
+              background: "var(--bg-surface)",
+              boxShadow: "var(--card-shadow)",
+              transition: "transform 200ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 200ms, border-color 200ms",
+            }}
+            onMouseEnter={e => {
+              e.currentTarget.style.transform = "translateY(-1px)";
+              e.currentTarget.style.boxShadow = "var(--card-shadow-hover)";
+              e.currentTarget.style.borderColor = "var(--border-hover)";
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.transform = "translateY(0)";
+              e.currentTarget.style.boxShadow = "var(--card-shadow)";
+              e.currentTarget.style.borderColor = "var(--border)";
+            }}
+          >
             <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-0.5 mb-1">
               <span className="font-semibold" style={{ color: "var(--text-1)" }}>{edu.school}</span>
               <span className="text-xs" style={{ color: "var(--text-4)" }}>{edu.dates}</span>
@@ -117,26 +158,41 @@ export default function About() {
           <h2 className="text-xs font-semibold uppercase tracking-widest mb-4" style={{ color: "var(--text-4)" }}>
             Selected Publications
           </h2>
-          <ul className="space-y-3">
+          <div className="space-y-2">
             {publications.map((p, i) => (
-              <li key={i} className="text-sm">
-                <a
-                  href={p.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-medium transition-colors"
-                  style={{ color: "var(--text-1)" }}
-                  onMouseEnter={e => (e.currentTarget.style.color = "var(--accent)")}
-                  onMouseLeave={e => (e.currentTarget.style.color = "var(--text-1)")}
-                >
+              <a
+                key={i}
+                href={p.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block rounded-xl p-4 border"
+                style={{
+                  borderColor: "var(--border)",
+                  background: "var(--bg-surface)",
+                  boxShadow: "var(--card-shadow)",
+                  textDecoration: "none",
+                  transition: "transform 200ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 200ms, border-color 200ms",
+                }}
+                onMouseEnter={e => {
+                  e.currentTarget.style.transform = "translateY(-1px)";
+                  e.currentTarget.style.boxShadow = "var(--card-shadow-hover)";
+                  e.currentTarget.style.borderColor = "var(--accent)";
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.boxShadow = "var(--card-shadow)";
+                  e.currentTarget.style.borderColor = "var(--border)";
+                }}
+              >
+                <p className="text-sm font-medium leading-snug mb-1" style={{ color: "var(--text-1)" }}>
                   {p.title}
-                </a>
-                <p className="mt-0.5" style={{ color: "var(--text-3)" }}>
+                </p>
+                <p className="text-xs" style={{ color: "var(--text-3)" }}>
                   {p.venue} · {p.year}
                 </p>
-              </li>
+              </a>
             ))}
-          </ul>
+          </div>
         </section>
 
         {/* Skills */}

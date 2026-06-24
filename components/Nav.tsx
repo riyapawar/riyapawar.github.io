@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { profile } from "@/lib/data";
 
 type Tab = "about" | "experience" | "projects" | "news";
@@ -36,6 +36,9 @@ function MoonIcon() {
 
 export default function Nav({ activeTab, setActiveTab }: NavProps) {
   const [isDark, setIsDark] = useState(false);
+  const pillRef = useRef<HTMLSpanElement>(null);
+  const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const navRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const stored = localStorage.getItem("theme");
@@ -46,6 +49,19 @@ export default function Nav({ activeTab, setActiveTab }: NavProps) {
     }
   }, []);
 
+  useLayoutEffect(() => {
+    const idx = tabs.findIndex(t => t.id === activeTab);
+    const btn = tabRefs.current[idx];
+    const nav = navRef.current;
+    const pill = pillRef.current;
+    if (!btn || !nav || !pill) return;
+    const navRect = nav.getBoundingClientRect();
+    const btnRect = btn.getBoundingClientRect();
+    pill.style.left = `${btnRect.left - navRect.left}px`;
+    pill.style.width = `${btnRect.width}px`;
+    pill.style.opacity = "1";
+  }, [activeTab]);
+
   function toggleTheme() {
     const next = isDark ? "light" : "dark";
     setIsDark(!isDark);
@@ -55,30 +71,53 @@ export default function Nav({ activeTab, setActiveTab }: NavProps) {
 
   return (
     <header
-      className="sticky top-0 z-50 backdrop-blur-sm border-b"
+      className="sticky top-0 z-50 backdrop-blur-md border-b"
       style={{ background: "var(--nav-bg)", borderColor: "var(--border)" }}
     >
       <div className="max-w-4xl mx-auto px-6 h-14 flex items-center justify-between">
         <button
           onClick={() => setActiveTab("about")}
-          className="font-semibold text-sm tracking-tight transition-colors"
-          style={{ color: "var(--text-1)" }}
+          className="font-semibold text-sm tracking-tight"
+          style={{
+            color: "var(--text-1)",
+            transition: "color 150ms",
+          }}
           onMouseEnter={e => (e.currentTarget.style.color = "var(--accent)")}
           onMouseLeave={e => (e.currentTarget.style.color = "var(--text-1)")}
         >
           {profile.name}
         </button>
 
-        <div className="flex items-center gap-1">
-          <nav className="flex items-center gap-1">
-            {tabs.map((tab) => (
+        <div className="flex items-center gap-2">
+          <nav
+            ref={navRef}
+            className="relative flex items-center"
+            style={{ padding: "4px" }}
+          >
+            {/* sliding pill */}
+            <span
+              ref={pillRef}
+              className="absolute rounded-md pointer-events-none"
+              style={{
+                top: 4,
+                bottom: 4,
+                left: 0,
+                width: 0,
+                opacity: 0,
+                background: "var(--bg-surface)",
+                transition: "left 220ms cubic-bezier(0.4, 0, 0.2, 1), width 220ms cubic-bezier(0.4, 0, 0.2, 1), opacity 120ms",
+              }}
+            />
+            {tabs.map((tab, i) => (
               <button
                 key={tab.id}
+                ref={el => { tabRefs.current[i] = el; }}
                 onClick={() => setActiveTab(tab.id)}
-                className="px-3 py-1.5 text-sm rounded-md transition-colors"
+                className="relative z-10 px-3 py-1.5 text-sm rounded-md"
                 style={{
-                  color: activeTab === tab.id ? "var(--accent)" : "var(--text-3)",
+                  color: activeTab === tab.id ? "var(--text-1)" : "var(--text-3)",
                   fontWeight: activeTab === tab.id ? 500 : 400,
+                  transition: "color 150ms",
                 }}
               >
                 {tab.label}
@@ -88,10 +127,19 @@ export default function Nav({ activeTab, setActiveTab }: NavProps) {
 
           <button
             onClick={toggleTheme}
-            className="ml-2 p-1.5 rounded-md transition-colors"
-            style={{ color: "var(--text-3)" }}
-            onMouseEnter={e => (e.currentTarget.style.color = "var(--accent)")}
-            onMouseLeave={e => (e.currentTarget.style.color = "var(--text-3)")}
+            className="p-2 rounded-md"
+            style={{
+              color: "var(--text-3)",
+              transition: "color 150ms, background 150ms",
+            }}
+            onMouseEnter={e => {
+              e.currentTarget.style.color = "var(--text-1)";
+              e.currentTarget.style.background = "var(--bg-surface)";
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.color = "var(--text-3)";
+              e.currentTarget.style.background = "transparent";
+            }}
             aria-label="Toggle theme"
           >
             {isDark ? <SunIcon /> : <MoonIcon />}
