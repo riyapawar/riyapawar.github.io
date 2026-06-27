@@ -1,5 +1,7 @@
 import { news } from "@/lib/data";
 
+const labelFont = { fontFamily: "var(--font-label), ui-monospace, monospace" };
+
 export default function News() {
   return (
     <div className="py-10">
@@ -7,12 +9,13 @@ export default function News() {
         News
       </h1>
 
-      <div className="space-y-1">
+      <div className="space-y-px">
         {news.map((item, i) => (
           <div
             key={i}
-            className="flex gap-6 px-4 py-3 -mx-4 rounded-lg"
+            className="flex gap-6 px-4 py-3 -mx-4"
             style={{
+              borderRadius: "3px",
               transition: "background 150ms",
             }}
             onMouseEnter={e => (e.currentTarget.style.background = "var(--bg-hover)")}
@@ -20,7 +23,7 @@ export default function News() {
           >
             <span
               className="text-xs font-medium w-24 shrink-0 pt-0.5 tabular-nums"
-              style={{ color: "var(--text-4)" }}
+              style={{ ...labelFont, color: "var(--text-4)" }}
             >
               {item.date}
             </span>

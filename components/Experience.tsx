@@ -1,5 +1,7 @@
 import { experience } from "@/lib/data";
 
+const labelFont = { fontFamily: "var(--font-label), ui-monospace, monospace" };
+
 export default function Experience() {
   return (
     <div className="py-10">
@@ -11,31 +13,33 @@ export default function Experience() {
         {experience.map((item, i) => (
           <div
             key={i}
-            className="rounded-xl px-5 py-5 border"
+            className="px-5 py-5 border"
             style={{
+              borderRadius: "3px",
               borderColor: "var(--border)",
               background: "var(--bg-surface)",
               boxShadow: "var(--card-shadow)",
-              transition: "transform 200ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1), border-color 200ms",
+              transition: "transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease",
             }}
             onMouseEnter={e => {
-              const el = e.currentTarget;
-              el.style.transform = "translateY(-2px)";
-              el.style.boxShadow = "var(--card-shadow-hover)";
-              el.style.borderColor = "var(--border-hover)";
+              e.currentTarget.style.transform = "translateY(-2px)";
+              e.currentTarget.style.boxShadow = "var(--card-shadow-hover)";
+              e.currentTarget.style.borderColor = "var(--accent)";
             }}
             onMouseLeave={e => {
-              const el = e.currentTarget;
-              el.style.transform = "translateY(0)";
-              el.style.boxShadow = "var(--card-shadow)";
-              el.style.borderColor = "var(--border)";
+              e.currentTarget.style.transform = "translateY(0)";
+              e.currentTarget.style.boxShadow = "var(--card-shadow)";
+              e.currentTarget.style.borderColor = "var(--border)";
             }}
           >
             <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-0.5 mb-1">
-              <span className="font-semibold" style={{ color: "var(--text-1)" }}>
+              <span className="font-semibold text-sm" style={{ color: "var(--text-1)" }}>
                 {item.role}
               </span>
-              <span className="text-xs shrink-0" style={{ color: "var(--text-4)" }}>
+              <span
+                className="text-xs shrink-0"
+                style={{ ...labelFont, color: "var(--text-4)" }}
+              >
                 {item.dates}
               </span>
             </div>
@@ -43,15 +47,22 @@ export default function Experience() {
               {item.org}
             </p>
             {item.team && (
-              <p className="text-xs mb-1" style={{ color: "var(--text-3)" }}>{item.team}</p>
+              <p className="text-xs mb-1" style={{ ...labelFont, color: "var(--text-3)" }}>
+                {item.team}
+              </p>
             )}
             {item.focus && (
-              <p className="text-xs italic mb-2" style={{ color: "var(--text-3)" }}>{item.focus}</p>
+              <p className="text-xs italic mb-2" style={{ color: "var(--text-3)" }}>
+                {item.focus}
+              </p>
             )}
             <ul className="mt-2 space-y-1.5">
               {item.bullets.map((b, j) => (
                 <li key={j} className="flex items-start gap-2 text-sm" style={{ color: "var(--text-2)" }}>
-                  <span className="mt-[5px] shrink-0 w-1 h-1 rounded-full" style={{ background: "var(--text-4)" }} />
+                  <span
+                    className="shrink-0 mt-[7px] w-1 h-1 rounded-full"
+                    style={{ background: "var(--accent)", opacity: 0.5 }}
+                  />
                   <span>{b}</span>
                 </li>
               ))}

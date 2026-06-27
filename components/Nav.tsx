@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { profile } from "@/lib/data";
 
 type Tab = "about" | "experience" | "projects" | "news";
@@ -15,23 +15,6 @@ const tabs: { id: Tab; label: string }[] = [
 interface NavProps {
   activeTab: Tab;
   setActiveTab: (tab: Tab) => void;
-}
-
-function SunIcon() {
-  return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
-      <circle cx="12" cy="12" r="4" />
-      <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
-    </svg>
-  );
-}
-
-function MoonIcon() {
-  return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
-      <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
-    </svg>
-  );
 }
 
 export default function Nav({ activeTab, setActiveTab }: NavProps) {
@@ -49,7 +32,7 @@ export default function Nav({ activeTab, setActiveTab }: NavProps) {
     }
   }, []);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const idx = tabs.findIndex(t => t.id === activeTab);
     const btn = tabRefs.current[idx];
     const nav = navRef.current;
@@ -75,36 +58,38 @@ export default function Nav({ activeTab, setActiveTab }: NavProps) {
       style={{ background: "var(--nav-bg)", borderColor: "var(--border)" }}
     >
       <div className="max-w-4xl mx-auto px-6 h-14 flex items-center justify-between">
+        {/* Terminal prompt */}
         <button
           onClick={() => setActiveTab("about")}
-          className="font-semibold text-sm tracking-tight"
-          style={{
-            color: "var(--text-1)",
-            transition: "color 150ms",
-          }}
-          onMouseEnter={e => (e.currentTarget.style.color = "var(--accent)")}
-          onMouseLeave={e => (e.currentTarget.style.color = "var(--text-1)")}
+          className="flex items-center gap-2 text-sm"
+          style={{ fontFamily: "var(--font-label), ui-monospace, monospace" }}
         >
-          {profile.name}
+          <span style={{ color: "var(--accent)", fontSize: "10px" }}>●</span>
+          <span style={{ color: "var(--text-3)" }}>
+            {profile.name.toLowerCase().replace(" ", "")}@princeton
+          </span>
+          <span style={{ color: "var(--text-4)" }}>:~$</span>
         </button>
 
         <div className="flex items-center gap-2">
           <nav
             ref={navRef}
             className="relative flex items-center"
-            style={{ padding: "4px" }}
+            style={{ padding: "4px", fontFamily: "var(--font-label), ui-monospace, monospace" }}
           >
             {/* sliding pill */}
             <span
               ref={pillRef}
-              className="absolute rounded-md pointer-events-none"
+              className="absolute pointer-events-none"
               style={{
                 top: 4,
                 bottom: 4,
                 left: 0,
                 width: 0,
                 opacity: 0,
-                background: "var(--bg-surface)",
+                background: "var(--bg-tag)",
+                borderRadius: "3px",
+                border: "1px solid var(--border)",
                 transition: "left 220ms cubic-bezier(0.4, 0, 0.2, 1), width 220ms cubic-bezier(0.4, 0, 0.2, 1), opacity 120ms",
               }}
             />
@@ -113,10 +98,11 @@ export default function Nav({ activeTab, setActiveTab }: NavProps) {
                 key={tab.id}
                 ref={el => { tabRefs.current[i] = el; }}
                 onClick={() => setActiveTab(tab.id)}
-                className="relative z-10 px-3 py-1.5 text-sm rounded-md"
+                className="relative z-10 px-3 py-1.5 text-xs"
                 style={{
-                  color: activeTab === tab.id ? "var(--text-1)" : "var(--text-3)",
-                  fontWeight: activeTab === tab.id ? 500 : 400,
+                  color: activeTab === tab.id ? "var(--accent)" : "var(--text-3)",
+                  fontWeight: activeTab === tab.id ? 600 : 400,
+                  letterSpacing: "0.04em",
                   transition: "color 150ms",
                 }}
               >
@@ -125,24 +111,30 @@ export default function Nav({ activeTab, setActiveTab }: NavProps) {
             ))}
           </nav>
 
+          {/* Theme toggle */}
           <button
             onClick={toggleTheme}
-            className="p-2 rounded-md"
+            className="flex items-center justify-center text-sm border"
             style={{
+              width: 30,
+              height: 30,
+              borderRadius: "3px",
+              borderColor: "var(--border)",
               color: "var(--text-3)",
-              transition: "color 150ms, background 150ms",
+              fontFamily: "var(--font-label), ui-monospace, monospace",
+              transition: "color 150ms, border-color 150ms, background 150ms",
             }}
             onMouseEnter={e => {
-              e.currentTarget.style.color = "var(--text-1)";
-              e.currentTarget.style.background = "var(--bg-surface)";
+              e.currentTarget.style.color = "var(--accent)";
+              e.currentTarget.style.borderColor = "var(--accent)";
             }}
             onMouseLeave={e => {
               e.currentTarget.style.color = "var(--text-3)";
-              e.currentTarget.style.background = "transparent";
+              e.currentTarget.style.borderColor = "var(--border)";
             }}
             aria-label="Toggle theme"
           >
-            {isDark ? <SunIcon /> : <MoonIcon />}
+            {isDark ? "○" : "◐"}
           </button>
         </div>
       </div>
