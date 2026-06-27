@@ -1,7 +1,7 @@
 export const profile = {
   name: "Riya Pawar",
   role: "B.S.E. Computer Science @ Princeton University",
-  bio: "Rising junior at Princeton studying CS with Advanced Standing, with minors in applied math, statistics & ML, and optimization. My work sits at the intersection of systems and research: I've built ML pipelines for psychiatric wearables, probed the geometry of LLM safety mechanisms, and shipped security infrastructure from internships to published papers. I'm drawn to problems that demand both mathematical rigor and careful engineering, in service of technology that makes a meaningful difference for people.",
+  bio: "Rising junior at Princeton studying CS with Advanced Standing, with minors in applied math, statistics & ML, and optimization. I was the only girl in my high school engineering magnet program — every class, just me and thirty guys — which gave me an early and persistent sense of why representation matters. Since then I've organized workshops, hackathons, and leadership sessions to help introduce young women into tech. Last year I led a joint initiative between Boss Beauties and Girls Who Code, mentoring a cohort of development interns from architecture decisions through code review and product launch. On the technical side, my work sits at the intersection of systems and research: I've built ML pipelines for psychiatric wearables, probed the geometry of LLM safety mechanisms, and shipped security infrastructure from internships to published papers. I'm drawn to problems that demand both mathematical rigor and careful engineering, in service of technology that genuinely helps people.",
   email: "riyanj2006@gmail.com",
   emailPrinceton: "rp0612@princeton.edu",
   github: "https://github.com/riyapawar?tab=repositories",
