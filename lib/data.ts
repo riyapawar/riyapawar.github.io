@@ -1,7 +1,7 @@
 export const profile = {
   name: "Riya Pawar",
   role: "B.S.E. Computer Science @ Princeton University",
-  bio: "Rising junior at Princeton studying CS with Advanced Standing, with minors in applied math, statistics & ML, and optimization. I was the only girl in my high school engineering magnet program — every class, just me and thirty guys — which gave me an early and persistent sense of why representation matters. Since then I've organized workshops, hackathons, and leadership sessions to help introduce young women into tech. Last year I led a joint initiative between Boss Beauties and Girls Who Code, mentoring a cohort of development interns from architecture decisions through code review and product launch. On the technical side, my work sits at the intersection of systems and research: I've built ML pipelines for psychiatric wearables, probed the geometry of LLM safety mechanisms, and shipped security infrastructure from internships to published papers. I'm drawn to problems that demand both mathematical rigor and careful engineering, in service of technology that genuinely helps people.",
+  bio: "Rising junior at Princeton studying CS with Advanced Standing, with minors in applied math, statistics & ML, and optimization. I was the only girl in my high school engineering magnet program (every class, just me and thirty guys), which gave me an early and persistent sense of why representation matters. Since then I've organized workshops, hackathons, and leadership sessions to help introduce young women into tech. Last year I led a joint initiative between Boss Beauties and Girls Who Code, mentoring a cohort of development interns from architecture decisions through code review and product launch. On the technical side, my work sits at the intersection of systems and research: I've built ML pipelines for psychiatric wearables, probed the geometry of LLM safety mechanisms, and shipped security infrastructure from internships to published papers. I'm drawn to problems that demand both mathematical rigor and careful engineering, in service of technology that genuinely helps people.",
   email: "riyanj2006@gmail.com",
   emailPrinceton: "rp0612@princeton.edu",
   github: "https://github.com/riyapawar?tab=repositories",
@@ -47,11 +47,14 @@ export const education = [
 export const experience = [
   {
     role: "Software Engineering Intern",
-    org: "DTCC",
+    org: "DTCC (The Depository Trust & Clearing Corporation)",
     team: "Application Development Team",
     dates: "May 2026 – Present",
     bullets: [
-      "Building and optimizing infrastructure for enterprise-scale financial systems at one of the world's largest post-trade market infrastructures.",
+      "Developed data infrastructure and internal tooling using Python, Java, SQL, AWS, and Snowflake to support Repository and Derivatives Services workflows processing high-volume post-trade transactions.",
+      "Built retrieval pipelines and natural language interfaces for querying large-scale trading infrastructure metadata and operational datasets.",
+      "Reduced Snowflake compute costs through query optimization, warehouse right-sizing, and auto-scaling based on workload analysis.",
+      "Improved the reliability and scalability of infrastructure supporting global derivatives processing and post-trade workflows.",
     ],
   },
   {
@@ -59,7 +62,8 @@ export const experience = [
     org: "Verma Capital",
     dates: "May 2026 – Present",
     bullets: [
-      "Applying mathematical modeling and statistical inference to large-scale financial data to develop systematic trading strategies.",
+      "Developed Python pipelines for financial data analysis and signal generation.",
+      "Applied statistical modeling and time series analysis to evaluate predictive relationships in market data.",
     ],
   },
   {

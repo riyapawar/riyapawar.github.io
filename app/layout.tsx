@@ -10,7 +10,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Riya Pawar",
   description:
-    "Riya Pawar — Systems-focused engineer and researcher at Princeton University specializing in high-performance computing, distributed infrastructure, and machine learning.",
+    "Riya Pawar, Princeton CS BSE. Engineer and researcher working at the intersection of systems, ML, and security.",
 };
 
 export default function RootLayout({
