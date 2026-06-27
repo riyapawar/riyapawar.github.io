@@ -1,7 +1,7 @@
 export const profile = {
   name: "Riya Pawar",
   role: "B.S.E. Computer Science @ Princeton University",
-  bio: "Rising junior at Princeton studying CS, with minors in applied math, statistics & ML, and optimization. My work sits at the intersection of systems and research: I've built ML pipelines for psychiatric wearables, probed the geometry of LLM safety mechanisms, and shipped security infrastructure from internships to published papers. I'm drawn to problems that demand both mathematical rigor and careful engineering.",
+  bio: "Rising junior at Princeton studying CS with Advanced Standing, with minors in applied math, statistics & ML, and optimization. My work sits at the intersection of systems and research: I've built ML pipelines for psychiatric wearables, probed the geometry of LLM safety mechanisms, and shipped security infrastructure from internships to published papers. I'm drawn to problems that demand both mathematical rigor and careful engineering, in service of technology that makes a meaningful difference for people.",
   email: "riyanj2006@gmail.com",
   emailPrinceton: "rp0612@princeton.edu",
   github: "https://github.com/riyapawar?tab=repositories",
@@ -112,6 +112,16 @@ export const experience = [
       "Built a real-time ransomware detection system: honeypot files are seeded across the filesystem, and any process that touches them triggers an alert, catching ransomware before it can spread.",
       "Wrote low-level C++ to spin up, audit, and tear down randomized honeypot architectures across multiple OS targets.",
       "Trained anomaly detection models on folder-level write-velocity metrics; the module shipped into commercial enterprise backup products protecting Fortune 500 infrastructure.",
+    ],
+  },
+  {
+    role: "Research Fellow",
+    org: "Governor's School of Engineering and Technology (GSET), Rutgers University",
+    dates: "Summer 2023",
+    bullets: [
+      "Selected for GSET, one of New Jersey's most competitive STEM programs, admitting roughly 100 high school students statewide each year for an intensive research experience at Rutgers.",
+      "Conducted independent original research on real-time audio encryption using chaos maps, discrete wavelet transforms, and Diffie-Hellman key exchange. The system encrypts audio streams faster than AES/DES while resisting spectral analysis attacks.",
+      "Submitted research to the NJ Junior Science and Humanities Symposium (NJJSHS), winning First Place in Computer Science and First Place Overall; ranked Top 10 in CS nationally at NJSHS. Published at IEEE URTC 2023.",
     ],
   },
 ];
