@@ -57,11 +57,11 @@ export default function Nav({ activeTab, setActiveTab }: NavProps) {
       className="sticky top-0 z-50 backdrop-blur-md border-b"
       style={{ background: "var(--nav-bg)", borderColor: "var(--border)" }}
     >
-      <div className="max-w-4xl mx-auto px-6 h-14 flex items-center justify-between">
+      <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Terminal prompt */}
         <button
           onClick={() => setActiveTab("about")}
-          className="flex items-center gap-2 text-sm"
+          className="flex items-center gap-2 text-base"
           style={{ fontFamily: "var(--font-label), ui-monospace, monospace" }}
         >
           <span style={{ color: "var(--accent)", fontSize: "10px" }}>●</span>
@@ -98,7 +98,7 @@ export default function Nav({ activeTab, setActiveTab }: NavProps) {
                 key={tab.id}
                 ref={el => { tabRefs.current[i] = el; }}
                 onClick={() => setActiveTab(tab.id)}
-                className="relative z-10 px-3 py-1.5 text-xs"
+                className="relative z-10 px-3 py-1.5 text-sm"
                 style={{
                   color: activeTab === tab.id ? "var(--accent)" : "var(--text-3)",
                   fontWeight: activeTab === tab.id ? 600 : 400,

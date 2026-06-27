@@ -91,7 +91,7 @@ export default function About() {
         <div className="flex-1 min-w-0">
           {/* Eyebrow */}
           <p
-            className="text-xs mb-3 tracking-widest uppercase"
+            className="text-sm mb-3 tracking-widest uppercase"
             style={{ ...labelFont, color: "var(--accent)", letterSpacing: "0.14em" }}
           >
             engineer · researcher · princeton
@@ -100,7 +100,7 @@ export default function About() {
           {/* Name with blinking cursor */}
           <h1
             className="font-bold mb-4 leading-tight"
-            style={{ color: "var(--text-1)", fontSize: "clamp(2rem, 5vw, 3.2rem)" }}
+            style={{ color: "var(--text-1)", fontSize: "clamp(2.4rem, 5vw, 3.8rem)" }}
           >
             {profile.name}
             <span className="cursor-blink">_</span>
@@ -108,8 +108,8 @@ export default function About() {
 
           {/* Bio */}
           <p
-            className="text-sm leading-7 mb-5"
-            style={{ color: "var(--text-2)", maxWidth: "56ch" }}
+            className="text-base leading-7 mb-5"
+            style={{ color: "var(--text-2)", maxWidth: "58ch" }}
           >
             {profile.bio}
           </p>
@@ -119,7 +119,7 @@ export default function About() {
             {["systems", "ml", "security", "gpa 4.0", "advanced standing"].map(tag => (
               <span
                 key={tag}
-                className="text-xs border px-2.5 py-1"
+                className="text-sm border px-3 py-1"
                 style={{
                   ...labelFont,
                   borderRadius: "6px",
@@ -158,7 +158,7 @@ export default function About() {
         {/* Education */}
         <section>
           <h2
-            className="text-xs font-semibold uppercase tracking-widest mb-4"
+            className="text-xs font-semibold uppercase tracking-widest mb-5"
             style={{ ...labelFont, color: "var(--text-4)", letterSpacing: "0.14em" }}
           >
             Education
@@ -184,16 +184,16 @@ export default function About() {
             }}
           >
             <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-0.5 mb-1">
-              <span className="font-semibold text-sm" style={{ color: "var(--text-1)" }}>{edu.school}</span>
-              <span className="text-xs" style={{ ...labelFont, color: "var(--text-4)" }}>{edu.dates}</span>
+              <span className="font-semibold text-base" style={{ color: "var(--text-1)" }}>{edu.school}</span>
+              <span className="text-sm" style={{ ...labelFont, color: "var(--text-4)" }}>{edu.dates}</span>
             </div>
-            <p className="text-sm mb-1" style={{ color: "var(--text-2)" }}>{edu.degree}</p>
-            <p className="text-sm font-medium mb-2" style={{ color: "var(--accent)" }}>GPA: {edu.gpa}</p>
-            <p className="text-sm mb-2" style={{ color: "var(--text-3)" }}>
+            <p className="text-base mb-1" style={{ color: "var(--text-2)" }}>{edu.degree}</p>
+            <p className="text-base font-medium mb-2" style={{ color: "var(--accent)" }}>GPA: {edu.gpa}</p>
+            <p className="text-base mb-2" style={{ color: "var(--text-3)" }}>
               <span className="font-medium" style={{ color: "var(--text-2)" }}>Minors: </span>
               {edu.minors!.join(" · ")}
             </p>
-            <p className="text-sm" style={{ color: "var(--text-3)" }}>
+            <p className="text-base" style={{ color: "var(--text-3)" }}>
               <span className="font-medium" style={{ color: "var(--text-2)" }}>Coursework: </span>
               {edu.coursework!.join(", ")}
             </p>
@@ -203,7 +203,7 @@ export default function About() {
         {/* Publications */}
         <section>
           <h2
-            className="text-xs font-semibold uppercase tracking-widest mb-4"
+            className="text-xs font-semibold uppercase tracking-widest mb-5"
             style={{ ...labelFont, color: "var(--text-4)", letterSpacing: "0.14em" }}
           >
             Selected Publications
@@ -235,10 +235,10 @@ export default function About() {
                   e.currentTarget.style.borderColor = "var(--border)";
                 }}
               >
-                <p className="text-sm font-medium leading-snug mb-1" style={{ color: "var(--text-1)" }}>
+                <p className="text-base font-medium leading-snug mb-1" style={{ color: "var(--text-1)" }}>
                   {p.title}
                 </p>
-                <p className="text-xs" style={{ ...labelFont, color: "var(--text-3)" }}>
+                <p className="text-sm" style={{ ...labelFont, color: "var(--text-3)" }}>
                   {p.venue} · {p.year}
                 </p>
               </a>
@@ -249,7 +249,7 @@ export default function About() {
         {/* Skills */}
         <section>
           <h2
-            className="text-xs font-semibold uppercase tracking-widest mb-4"
+            className="text-xs font-semibold uppercase tracking-widest mb-5"
             style={{ ...labelFont, color: "var(--text-4)", letterSpacing: "0.14em" }}
           >
             Skills
@@ -265,7 +265,7 @@ export default function About() {
             ].map((row) => (
               <div key={row.label} className="flex flex-col sm:flex-row sm:gap-4">
                 <span
-                  className="font-medium sm:w-52 shrink-0 text-xs"
+                  className="font-medium sm:w-56 shrink-0 text-sm"
                   style={{ ...labelFont, color: "var(--text-2)", paddingTop: "2px" }}
                 >
                   {row.label}

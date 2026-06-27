@@ -5,7 +5,7 @@ const labelFont = { fontFamily: "var(--font-label), ui-monospace, monospace" };
 export default function News() {
   return (
     <div className="py-10">
-      <h1 className="text-xl font-bold tracking-tight mb-6" style={{ color: "var(--text-1)" }}>
+      <h1 className="text-2xl font-bold tracking-tight mb-6" style={{ color: "var(--text-1)" }}>
         News
       </h1>
 
@@ -27,7 +27,7 @@ export default function News() {
             >
               {item.date}
             </span>
-            <p className="text-sm leading-5" style={{ color: "var(--text-2)" }}>
+            <p className="text-base leading-6" style={{ color: "var(--text-2)" }}>
               {item.text}
             </p>
           </div>

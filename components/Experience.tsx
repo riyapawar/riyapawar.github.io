@@ -5,7 +5,7 @@ const labelFont = { fontFamily: "var(--font-label), ui-monospace, monospace" };
 export default function Experience() {
   return (
     <div className="py-10">
-      <h1 className="text-xl font-bold tracking-tight mb-6" style={{ color: "var(--text-1)" }}>
+      <h1 className="text-2xl font-bold tracking-tight mb-6" style={{ color: "var(--text-1)" }}>
         Experience
       </h1>
 
@@ -33,17 +33,17 @@ export default function Experience() {
             }}
           >
             <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-0.5 mb-1">
-              <span className="font-semibold text-sm" style={{ color: "var(--text-1)" }}>
+              <span className="font-semibold text-base" style={{ color: "var(--text-1)" }}>
                 {item.role}
               </span>
               <span
-                className="text-xs shrink-0"
+                className="text-sm shrink-0"
                 style={{ ...labelFont, color: "var(--text-4)" }}
               >
                 {item.dates}
               </span>
             </div>
-            <p className="text-sm font-medium mb-0.5" style={{ color: "var(--accent)" }}>
+            <p className="text-base font-medium mb-0.5" style={{ color: "var(--accent)" }}>
               {item.org}
             </p>
             {item.team && (
@@ -58,7 +58,7 @@ export default function Experience() {
             )}
             <ul className="mt-2 space-y-1.5">
               {item.bullets.map((b, j) => (
-                <li key={j} className="flex items-start gap-2 text-sm" style={{ color: "var(--text-2)" }}>
+                <li key={j} className="flex items-start gap-2 text-base" style={{ color: "var(--text-2)" }}>
                   <span
                     className="shrink-0 mt-[7px] w-1 h-1 rounded-full"
                     style={{ background: "var(--accent)", opacity: 0.5 }}

@@ -15,7 +15,7 @@ export default function PortfolioClient() {
   return (
     <>
       <Nav activeTab={activeTab} setActiveTab={setActiveTab} />
-      <main className="max-w-4xl mx-auto px-6">
+      <main className="max-w-5xl mx-auto px-6">
         <div key={activeTab} className="animate-in">
           {activeTab === "about" && <About />}
           {activeTab === "experience" && <Experience />}
@@ -24,7 +24,7 @@ export default function PortfolioClient() {
         </div>
       </main>
       <footer
-        className="max-w-4xl mx-auto px-6 py-8 mt-4 border-t"
+        className="max-w-5xl mx-auto px-6 py-8 mt-4 border-t"
         style={{ borderColor: "var(--border)" }}
       >
         <p className="text-xs" style={{ color: "var(--text-4)" }}>© 2026 Riya Pawar</p>

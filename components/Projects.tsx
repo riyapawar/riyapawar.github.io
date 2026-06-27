@@ -35,7 +35,7 @@ export default function Projects() {
   return (
     <div className="py-10">
       <h1
-        className="text-xl font-bold tracking-tight mb-6"
+        className="text-2xl font-bold tracking-tight mb-6"
         style={{ color: "var(--text-1)" }}
       >
         Projects
@@ -52,7 +52,7 @@ export default function Projects() {
           >
             <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-3">
               <div className="min-w-0">
-                <h2 className="font-semibold text-sm leading-snug" style={{ color: "var(--text-1)" }}>
+                <h2 className="font-semibold text-base leading-snug" style={{ color: "var(--text-1)" }}>
                   {project.title}
                 </h2>
                 {project.subtitle && (
@@ -117,7 +117,7 @@ export default function Projects() {
               ))}
             </div>
 
-            <p className="text-sm leading-6" style={{ color: "var(--text-2)" }}>
+            <p className="text-base leading-7" style={{ color: "var(--text-2)" }}>
               {project.description}
             </p>
 
