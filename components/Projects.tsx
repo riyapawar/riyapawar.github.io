@@ -3,7 +3,7 @@ import { projects } from "@/lib/data";
 const labelFont = { fontFamily: "var(--font-label), ui-monospace, monospace" };
 
 const cardStyle = {
-  borderRadius: "3px",
+  borderRadius: "12px",
   borderColor: "var(--border)",
   background: "var(--bg-surface)",
   boxShadow: "var(--card-shadow)",
@@ -73,7 +73,7 @@ export default function Projects() {
                       className="inline-flex items-center gap-1 px-2.5 py-1 border text-xs font-medium"
                       style={{
                         ...labelFont,
-                        borderRadius: "3px",
+                        borderRadius: "8px",
                         color: "var(--text-2)",
                         borderColor: "var(--border)",
                         background: "var(--bg)",
@@ -105,7 +105,7 @@ export default function Projects() {
                   className="px-2 py-0.5 text-xs border"
                   style={{
                     ...labelFont,
-                    borderRadius: "3px",
+                    borderRadius: "6px",
                     background: "var(--bg-tag)",
                     borderColor: "var(--border)",
                     color: "var(--text-3)",

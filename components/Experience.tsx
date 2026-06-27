@@ -15,7 +15,7 @@ export default function Experience() {
             key={i}
             className="px-5 py-5 border"
             style={{
-              borderRadius: "3px",
+              borderRadius: "12px",
               borderColor: "var(--border)",
               background: "var(--bg-surface)",
               boxShadow: "var(--card-shadow)",

@@ -15,7 +15,7 @@ export default function News() {
             key={i}
             className="flex gap-6 px-4 py-3 -mx-4"
             style={{
-              borderRadius: "3px",
+              borderRadius: "8px",
               transition: "background 150ms",
             }}
             onMouseEnter={e => (e.currentTarget.style.background = "var(--bg-hover)")}

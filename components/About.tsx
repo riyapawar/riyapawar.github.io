@@ -20,7 +20,7 @@ function TerminalLink({
       className="flex items-center justify-center text-xs border w-full"
       style={{
         ...labelFont,
-        borderRadius: "3px",
+        borderRadius: "8px",
         borderColor: "var(--border)",
         color: "var(--text-2)",
         padding: "6px 12px",
@@ -66,7 +66,7 @@ export default function About() {
             style={{
               width: 180,
               height: 180,
-              borderRadius: "3px",
+              borderRadius: "12px",
               border: "1px solid var(--border)",
               background: "var(--bg-surface)",
             }}
@@ -122,7 +122,7 @@ export default function About() {
                 className="text-xs border px-2.5 py-1"
                 style={{
                   ...labelFont,
-                  borderRadius: "3px",
+                  borderRadius: "6px",
                   borderColor: "var(--border)",
                   color: "var(--text-3)",
                   letterSpacing: "0.05em",
@@ -166,7 +166,7 @@ export default function About() {
           <div
             className="p-5 border"
             style={{
-              borderRadius: "3px",
+              borderRadius: "12px",
               borderColor: "var(--border)",
               background: "var(--bg-surface)",
               boxShadow: "var(--card-shadow)",
