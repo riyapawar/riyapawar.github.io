@@ -1,7 +1,7 @@
 export const profile = {
   name: "Riya Pawar",
   role: "B.S.E. Computer Science @ Princeton University",
-  bio: "Sophomore at Princeton studying CS, with minors in applied math, statistics & ML, and optimization. My work sits at the intersection of systems and research: I've built ML pipelines for psychiatric wearables, probed the geometry of LLM safety mechanisms, and shipped security infrastructure from internships to published papers. I'm drawn to problems that demand both mathematical rigor and careful engineering.",
+  bio: "Rising junior at Princeton studying CS, with minors in applied math, statistics & ML, and optimization. My work sits at the intersection of systems and research: I've built ML pipelines for psychiatric wearables, probed the geometry of LLM safety mechanisms, and shipped security infrastructure from internships to published papers. I'm drawn to problems that demand both mathematical rigor and careful engineering.",
   email: "riyanj2006@gmail.com",
   emailPrinceton: "rp0612@princeton.edu",
   github: "https://github.com/riyapawar?tab=repositories",
