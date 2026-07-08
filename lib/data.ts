@@ -14,7 +14,6 @@ export const education = [
     location: "Princeton, NJ",
     degree: "B.S.E. in Computer Science",
     dates: "August 2024 – May 2028",
-    gpa: "4.0 / 4.0 (Spring 2026)",
     minors: [
       "Applied Mathematics",
       "Statistics & Machine Learning",
@@ -39,7 +38,6 @@ export const education = [
     location: "Manalapan, NJ",
     degree: "Science & Engineering Magnet Program",
     dates: "September 2020 – June 2024",
-    gpa: "5.7 / 4.0",
     notes: "Valedictorian of 454 students · 14 AP Classes (12 exams scored 5)",
   },
 ];

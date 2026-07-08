@@ -116,7 +116,7 @@ export default function About() {
 
           {/* Tag chips */}
           <div className="flex flex-wrap gap-2">
-            {["systems", "ml", "security", "gpa 4.0", "advanced standing"].map(tag => (
+            {["systems", "ml", "security", "advanced standing"].map(tag => (
               <span
                 key={tag}
                 className="text-sm border px-3 py-1"
@@ -188,8 +188,7 @@ export default function About() {
               <span className="text-sm" style={{ ...labelFont, color: "var(--text-4)" }}>{edu.dates}</span>
             </div>
             <p className="text-base mb-1" style={{ color: "var(--text-2)" }}>{edu.degree}</p>
-            <p className="text-base font-medium mb-2" style={{ color: "var(--accent)" }}>GPA: {edu.gpa}</p>
-            <p className="text-base mb-2" style={{ color: "var(--text-3)" }}>
+<p className="text-base mb-2" style={{ color: "var(--text-3)" }}>
               <span className="font-medium" style={{ color: "var(--text-2)" }}>Minors: </span>
               {edu.minors!.join(" · ")}
             </p>
