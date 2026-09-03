@@ -130,10 +130,20 @@ export const experience = [
 
 export const projects = [
   {
-    title: "Auditing Agent",
-    tags: ["AI Agents", "TypeScript", "Python", "LLM"],
+    title: "Groundwatch",
+    subtitle: "Causal attribution for RAG",
+    tags: ["LLM Safety", "Interpretability", "Benchmarks", "PyTorch", "Python"],
     description:
-      "An LLM-powered auditing pipeline with a TypeScript frontend and Python processing engine. Handles document ingestion, structured extraction, and automated report generation, built to make audit workflows that currently require hours of manual review completable in minutes.",
+      "Faithfulness metrics ask a binary question — is this claim entailed by the retrieved context? That collapses two failures that need opposite fixes: a claim the model already knew (retrieval failed, and the model covered for it) and a claim it invented. Groundwatch separates them by intervening rather than inspecting: score the answer under teacher forcing, then re-score it with the context replaced by length-matched filler, and read the shift. No corpus annotates this distinction and none can — whether a claim is parametric is a fact about a particular model's memory — so labels are constructed behaviourally per model from TriviaQA by asking each question with and without the gold paragraph. The result is a strong provenance detector and a scale-dependent veracity detector: grounding AUC 0.85, and the strongest single-chunk ablation is the correct supporting paragraph 99% of the time against 25% chance, but telling memorisation from fabrication is at chance for Qwen2.5-0.5B and only emerges at 1.5B. That partially falsifies the premise I started with, which is the finding I'd keep.",
+    links: [
+      { label: "GitHub", href: "https://github.com/riyapawar/rag-lie-detector" },
+    ],
+  },
+  {
+    title: "Auditing Agent",
+    tags: ["AI Agents", "Knowledge Graphs", "TypeScript", "Python", "LLM"],
+    description:
+      "An auditor testing transactions against ASC 606 works from prose, and the hard part is not producing a verdict but defending it six months later. This pipeline chunks the standard, extracts a knowledge graph, and classifies graph edges into 656 executable rules — each keeping a pointer back to the paragraph and the edge it came from. Rules land in a human review queue rather than going live: a SHA-256 content hash pins exactly what a reviewer approved, so re-extraction cannot silently promote unreviewed text. Approved rules execute in topological order over their dependency DAG, and a rule whose precondition failed is recorded as skipped-with-a-reason rather than as a pass. Every evaluation appends to an immutable log. 9 of 656 rules are approved, which is the system working: the extractor favours recall because a human is the filter.",
     links: [
       { label: "GitHub", href: "https://github.com/riyapawar/auditing-agent" },
     ],
