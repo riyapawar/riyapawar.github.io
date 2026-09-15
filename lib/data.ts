@@ -1,7 +1,7 @@
 export const profile = {
   name: "Riya Pawar",
   role: "B.S.E. Computer Science @ Princeton University",
-  bio: "Rising junior at Princeton studying CS with Advanced Standing, with minors in applied math, statistics & ML, and optimization. I was the only girl in my high school engineering magnet program (every class, just me and thirty guys), which gave me an early and persistent sense of why representation matters. Since then I've organized workshops, hackathons, and leadership sessions to help introduce young women into tech. Last year I led a joint initiative between Boss Beauties and Girls Who Code, mentoring a cohort of development interns from architecture decisions through code review and product launch. On the technical side, my work sits at the intersection of systems and research: I've built ML pipelines for psychiatric wearables, probed the geometry of LLM safety mechanisms, and shipped security infrastructure from internships to published papers. I'm drawn to problems that demand both mathematical rigor and careful engineering, in service of technology that genuinely helps people.",
+  bio: "Junior at Princeton studying CS with Advanced Standing, with minors in applied math, statistics & ML, and optimization. I was the only girl in my high school engineering magnet program (every class, just me and thirty guys), which gave me an early and persistent sense of why representation matters. Since then I've organized workshops, hackathons, and leadership sessions to help introduce young women into tech. Last year I led a joint initiative between Boss Beauties and Girls Who Code, mentoring a cohort of development interns from architecture decisions through code review and product launch. On the technical side, my work sits at the intersection of systems and research: I've built ML pipelines for psychiatric wearables, probed the geometry of LLM safety mechanisms, and shipped security infrastructure from internships to published papers. I'm drawn to problems that demand both mathematical rigor and careful engineering, in service of technology that genuinely helps people.",
   email: "riyanj2006@gmail.com",
   emailPrinceton: "rp0612@princeton.edu",
   github: "https://github.com/riyapawar?tab=repositories",
@@ -47,43 +47,43 @@ export const experience = [
     role: "Software Engineering Intern",
     org: "DTCC (The Depository Trust & Clearing Corporation)",
     team: "Application Development Team",
-    dates: "May 2026 – Present",
+    dates: "May 2026 – August 2026",
     bullets: [
-      "Developed data infrastructure and internal tooling using Python, Java, SQL, AWS, and Snowflake to support Repository and Derivatives Services workflows processing high-volume post-trade transactions.",
-      "Built retrieval pipelines and natural language interfaces for querying large-scale trading infrastructure metadata and operational datasets.",
-      "Reduced Snowflake compute costs through query optimization, warehouse right-sizing, and auto-scaling based on workload analysis.",
-      "Improved the reliability and scalability of infrastructure supporting global derivatives processing and post-trade workflows.",
+      "Recognized as the top-performing intern in a global class of 150+ interns.",
+      "Built a Streamlit-in-Snowflake cost-optimization tool spanning all of Repository & Derivatives Services. In its first month it surfaced 250+ TB of storage and compute inefficiencies, flagging tens of thousands of dollars in wasted compute credits annually.",
+      "Built data infrastructure, internal tooling, and natural language query interfaces (Python, Java, SQL, AWS, Snowflake) over high-volume post-trade transaction workflows and trading infrastructure metadata.",
+      "Raised backend test coverage from 50% to 90% with JUnit suites across core post-trade services (200k+ lines of code).",
     ],
   },
   {
     role: "Quantitative Research Intern",
     org: "Verma Capital",
-    dates: "May 2026 – Present",
+    dates: "May 2026 – August 2026",
     bullets: [
-      "Developed Python pipelines for financial data analysis and signal generation.",
-      "Applied statistical modeling and time series analysis to evaluate predictive relationships in market data.",
+      "Built and backtested Python pipelines for financial data analysis and signal generation across historical market datasets.",
+      "Applied statistical modeling and time-series analysis to identify and validate predictive relationships in market data.",
     ],
   },
   {
     role: "Undergraduate Researcher",
     org: "Princeton School of Engineering, Jha Lab",
-    dates: "December 2025 – Present",
-    focus: "Superintelligence, Small Language Models & Knowledge Graphs",
+    dates: "September 2025 – Present",
+    focus: "Knowledge Graphs & Small Language Models",
     bullets: [
-      "Building domain-specific superintelligence for physics-focused small language models. The goal is factual precision, not just fluency.",
-      "Using GraphMERT to construct knowledge and context graphs that support multi-hop question answering without hallucination.",
-      "Designing graph-augmented retrieval pipelines that give the model structured reasoning paths for scientific decision-making.",
+      "Building graph-augmented retrieval pipelines that use GraphMERT to construct knowledge and context graphs over small language models.",
+      "Enabling multi-hop question answering with improved factual grounding and reduced hallucination.",
+      "Filing for a patent on this research through Princeton's Office of Technology Licensing as a named inventor.",
     ],
   },
   {
     role: "Undergraduate Researcher",
     org: "Princeton School of Engineering, Jha Lab",
-    dates: "September 2024 – December 2025",
+    dates: "September 2024 – September 2025",
     focus: "Mental Health AI & Wearable Diagnostics",
     bullets: [
-      "Built ML pipelines for EEG-based mental health diagnostics, working toward clinical-grade psychiatric screening from wearable signals.",
-      "Partnered with Samsung Smart Watches to classify comorbid psychiatric conditions from continuous biometric data, a multi-label problem with messy real-world labels.",
-      "Implemented Joint Energy-Based Models (JEM) and VERA to get well-calibrated confidence estimates, not just predictions.",
+      "Spent over a year building end-to-end ML pipelines for EEG-based mental health diagnostics.",
+      "Partnered with Samsung to collect continuous wearable data and classify comorbid psychiatric conditions, a multi-label problem with messy real-world labels.",
+      "Trained multi-label classifiers with calibrated confidence estimates, not just predictions.",
     ],
   },
   {
@@ -92,7 +92,7 @@ export const experience = [
     dates: "February 2025 – May 2026",
     bullets: [
       "Mentored 30+ development interns building an interactive storytelling app, from architecture decisions through code review.",
-      "Designed the core web infrastructure: React component system, Firebase backend, CMS-driven content workflows.",
+      "Architected the core React/Firebase infrastructure and CMS-driven content workflows, working with stakeholders to translate requirements into technical specifications.",
       "Advised on product strategy alongside leaders from Time Inc., Inspired Capital, and The Meteor.",
     ],
   },
@@ -103,7 +103,7 @@ export const experience = [
     bullets: [
       "Helping run one of the largest collegiate hackathons in the US: 600+ participants, 36 hours, a lot of logistics.",
       "Raised $250K+ in sponsorships from OpenAI, Amazon, Dedalus Labs, and Google Cloud.",
-      "Designed technical tracks and handled live integration of sponsor APIs and cloud platforms during the event.",
+      "Ran live integration of sponsor APIs and cloud platforms during the event.",
     ],
   },
   {
@@ -111,9 +111,9 @@ export const experience = [
     org: "Commvault Systems",
     dates: "Summers 2021, 2022, 2023",
     bullets: [
-      "Built a real-time ransomware detection system: honeypot files are seeded across the filesystem, and any process that touches them triggers an alert, catching ransomware before it can spread.",
-      "Wrote low-level C++ to spin up, audit, and tear down randomized honeypot architectures across multiple OS targets.",
-      "Trained anomaly detection models on folder-level write-velocity metrics; the module shipped into commercial enterprise backup products protecting Fortune 500 infrastructure.",
+      "Across three summers, took a real-time ransomware detection system from prototype to production: honeypot files are seeded across the filesystem, and any process that touches them triggers an alert, catching ransomware before it can spread.",
+      "Wrote low-level C++ to instantiate, audit, and tear down randomized honeypot architectures across multiple OS targets.",
+      "Trained anomaly detection models on folder-level write-velocity metrics; the system shipped into commercial backup products protecting Fortune 500 infrastructure.",
     ],
   },
   {
@@ -215,6 +215,14 @@ export const publications = [
 
 export const news = [
   {
+    date: "2026",
+    text: "Filing for a patent on my knowledge graph research through Princeton's Office of Technology Licensing.",
+  },
+  {
+    date: "August 2026",
+    text: "Recognized as the top-performing intern in DTCC's global class of 150+ interns.",
+  },
+  {
     date: "May 2026",
     text: "Started as Software Engineering Intern at DTCC on the Application Development team.",
   },
@@ -223,20 +231,12 @@ export const news = [
     text: "Started as Quantitative Research Intern at Verma Capital.",
   },
   {
-    date: "December 2025",
-    text: "Shifted Jha Lab research focus to Superintelligence, Small Language Models, and Knowledge Graphs.",
+    date: "September 2025",
+    text: "Shifted Jha Lab research focus to Knowledge Graphs and Small Language Models.",
   },
   {
     date: "February 2025",
     text: "Joined Boss Beauties as Technical Advisor & Advisory Board Member.",
-  },
-  {
-    date: "June 2024",
-    text: "Graduated as Valedictorian of Manalapan High School's class of 454 students.",
-  },
-  {
-    date: "2024",
-    text: "Received NCWIT National Honorable Mention for the second consecutive year.",
   },
   {
     date: "September 2024",
@@ -245,6 +245,14 @@ export const news = [
   {
     date: "September 2024",
     text: "Joined the Jha Lab at Princeton Engineering, working on ML pipelines for EEG-based mental health diagnostics.",
+  },
+  {
+    date: "June 2024",
+    text: "Graduated as Valedictorian of Manalapan High School's class of 454 students.",
+  },
+  {
+    date: "2024",
+    text: "Received NCWIT National Honorable Mention for the second consecutive year.",
   },
   {
     date: "2023",
