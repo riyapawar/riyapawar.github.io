@@ -44,6 +44,15 @@ export const education = [
 
 export const experience = [
   {
+    role: "Incoming Software Engineering Intern",
+    org: "Citadel",
+    team: "Post-Trade Engineering Team",
+    dates: "Summer 2027",
+    bullets: [
+      "Joining the Post-Trade Engineering team as a software engineering intern in Summer 2027.",
+    ],
+  },
+  {
     role: "Software Engineering Intern",
     org: "DTCC (The Depository Trust & Clearing Corporation)",
     team: "Application Development Team",
@@ -214,6 +223,10 @@ export const publications = [
 ];
 
 export const news = [
+  {
+    date: "September 2026",
+    text: "Signed on as an incoming Software Engineering Intern at Citadel for Summer 2027, on the Post-Trade Engineering team.",
+  },
   {
     date: "2026",
     text: "Filing for a patent on my knowledge graph research through Princeton's Office of Technology Licensing.",
